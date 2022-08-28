@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import AuthScreen, { authScreenOptions } from '../screens/AuthScreen';
 import HomeScreen, { homeScreenOptions } from '../screens/HomeScreen';
+import DetailScreen, { detailScreenOptions } from '../screens/DetailScreen';
 import SeedScreen, { seedScreenOptions } from '../screens/SeedScreen';
 
 import Colors from '../constants/Colors';
@@ -29,7 +30,10 @@ const defaultNavOptions = {
     headerBackTitleStyle: {
         fontFamily: 'poppins',
     },
+    // headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary,
     headerTintColor: 'white',
+    // headerBackTitleVisible: Platform.OS === 'android' ? true : false,
+    headerBackTitleVisible: false,
 }
 
 const AuthNavigator = () => {
@@ -57,6 +61,11 @@ const AuthenticateNavigator = () => {
                 name='HomeScreen'
                 component={HomeScreen}
                 options={homeScreenOptions}
+            />
+            <Stack.Screen
+                name='DetailScreen'
+                component={DetailScreen}
+                options={detailScreenOptions}
             />
             <Stack.Screen
                 name='SeedScreen'

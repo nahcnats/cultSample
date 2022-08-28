@@ -105,7 +105,9 @@ function HomeScreen(props) {
                 </View>
                 <View style={styles.itemFooter}>
                     <View>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => props.navigation.navigate('DetailScreen', {
+                            data: {item}
+                        })}>
                             <Text style={styles.itemFooterButtonText}>Detail</Text>
                         </TouchableOpacity>
                     </View>
